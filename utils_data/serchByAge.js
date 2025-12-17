@@ -1,5 +1,5 @@
 import fs from 'fs'
-export default function searchByName(path,personName) {
+export default function searchByAge(path,age) {
     fs.readFile(path, "utf8", (error, data) => {
         if (error) {
             console.log({
@@ -8,7 +8,7 @@ export default function searchByName(path,personName) {
         } else {
             const people = JSON.parse(data)
             // console.log(people)
-            const persons = people.filter((obj) => obj.name === personName)
+            const persons = people.filter((obj) => obj.age === age)
             if (!persons) {
                 console.log("person not found!")
             } else {
@@ -17,4 +17,3 @@ export default function searchByName(path,personName) {
         }
     });
 }
-
